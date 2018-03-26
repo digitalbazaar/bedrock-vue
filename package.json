@@ -1,0 +1,29 @@
+{
+  "name": "bedrock-vue",
+  "version": "0.1.0-0",
+  "description": "Vue frontend framework running on Bedrock",
+  "main": "index.js",
+  "less": "app.less",
+  "dependencies": {
+    "bedrock-frontend": "^1.0.0",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-vue"
+  },
+  "bedrock": {
+    "browserDependencies": "all",
+    "manifest": {
+      "vue": {
+        "main": "dist/vue.esm.browser.js",
+        "module": "dist/vue.esm.browser.js"
+      },
+      "vue-router": {
+        "main": "dist/vue-router.js",
+        "module": "dist/vue-router.js"
+      }
+    }
+  }
+}
