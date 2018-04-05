@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <br-root>
     <br-header></br-header>
     <router-view></router-view>
     <br-footer></br-footer>
@@ -9,7 +9,7 @@
       <router-view></router-view>
       <br-footer></br-footer>
     </div> -->
-  </div>
+  </br-root>
 </template>
 <script>
 export default {

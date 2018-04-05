@@ -18,7 +18,8 @@ export function install(Vue, options) {
   // auto install router
   Vue.use(VueRouter);
 
-  // register default empty header and footer
+  // register default empty components
+  Vue.component('br-root', {template: '<div><slot></slot></div>'});
   Vue.component('br-header', {template: '<div></div>'});
   Vue.component('br-footer', {template: '<div></div>'});
 
@@ -135,6 +136,21 @@ export async function bootstrap() {
     vue.$router.addRoutes([
       {path: '*', component: NotFound}
     ]);
+
+    // update page titles by default
+    const defaultTitle = document.title;
+    const updateTitle = (to, from, next) => {
+      if(typeof to.meta.title === 'string') {
+        document.title = to.meta.title;
+      } else if(typeof to.meta.title === 'function') {
+        document.title = to.meta.title({to, from, next});
+      } else {
+        document.title = defaultTitle;
+      }
+      next();
+    };
+    updateTitle(vue.$route, null, () => {});
+    vue.$router.beforeEach(updateTitle);
   }
 
   // mount root Vue
