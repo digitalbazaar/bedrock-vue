@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-  name: 'br-app'
+  name: 'BrApp'
 };
 </script>
 <style>
