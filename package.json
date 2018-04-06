@@ -18,11 +18,13 @@
     "manifest": {
       "vue": {
         "main": "dist/vue.esm.browser.js",
-        "module": "dist/vue.esm.browser.js"
+        "module": "dist/vue.esm.browser.js",
+        "browser": "dist/vue.runtime.esm.js"
       },
       "vue-router": {
         "main": "dist/vue-router.js",
-        "module": "dist/vue-router.js"
+        "module": "dist/vue-router.js",
+        "browser": "dist/vue-router.min.js"
       }
     }
   }
