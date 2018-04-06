@@ -7,6 +7,7 @@
 
 import {ready} from 'bedrock-frontend';
 import BrApp from './BrApp.vue';
+import BrRoot from './BrRoot.vue';
 import NotFound from './NotFound.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -19,9 +20,9 @@ export function install(Vue, options) {
   Vue.use(VueRouter);
 
   // register default empty components
-  Vue.component('br-root', {template: '<div><slot></slot></div>'});
-  Vue.component('br-header', {template: '<div></div>'});
-  Vue.component('br-footer', {template: '<div></div>'});
+  Vue.component('br-root', BrRoot);
+  Vue.component('br-header', {render() {}});
+  Vue.component('br-footer', {render() {}});
 
   // auto install br-app
   Vue.component('br-app', BrApp);
