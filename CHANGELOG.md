@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 0.0.0 - 2018-03-25
+## 0.1.0 - 2018-05-01
 
 ### Added
 - Add core files.
