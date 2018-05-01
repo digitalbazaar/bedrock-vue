@@ -3,7 +3,6 @@
   "version": "0.1.0-0",
   "description": "Vue frontend framework running on Bedrock",
   "main": "index.js",
-  "less": "app.less",
   "dependencies": {
     "bedrock-frontend": "^1.0.0",
     "vue": "^2.5.16",
