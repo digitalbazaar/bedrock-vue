@@ -5,14 +5,14 @@
  */
 'use strict';
 
-import {ready} from 'bedrock-frontend';
+import {ready} from 'bedrock-web';
 import BrApp from './BrApp.vue';
 import BrRoot from './BrRoot.vue';
 import NotFound from './NotFound.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-// autostart once bedrock frontend is ready
+// autostart once bedrock web app is ready
 ready.then(() => start());
 
 export function install(Vue, options) {
@@ -49,8 +49,8 @@ export let rootVue;
  * Sets the root Vue to mount. If `false` is passed, then no root Vue will be
  * automatically mounted.
  *
- * When the frontend is ready, `start` will be called which will bootstrap
- * the applicaiton using the root Vue `vue`. If `vue` is a function, it is
+ * When the web app is ready, `start` will be called which will bootstrap
+ * the application using the root Vue `vue`. If `vue` is a function, it is
  * assumed to be a factory function; it will be called and the return value
  * passed as the root Vue. The return value may be a Promise, permitting other
  * setup to occur before the root Vue is ready.

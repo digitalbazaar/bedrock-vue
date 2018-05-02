@@ -4,7 +4,7 @@
   "description": "Vue frontend framework running on Bedrock",
   "main": "index.js",
   "dependencies": {
-    "bedrock-frontend": "^1.0.0",
+    "bedrock-web": "^1.0.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
