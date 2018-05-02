@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+## 1.0.1 - 2018-05-02
+
+### Changed
+- Use `bedrock-web` renamed from bedrock-frontend.
+
 ## 1.0.0 - 2018-05-01
 
 ### Changed
