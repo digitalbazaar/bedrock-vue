@@ -1,5 +1,11 @@
 # bedrock-vue ChangeLog
 
+## 1.0.2 - 2018-05-22
+
+### Changed
+- Ensure Vue devtools are notified once vue is bootstrapped
+  provided that `Vue.config.devtools === true`.
+
 ## 1.0.1 - 2018-05-02
 
 ### Changed
