@@ -156,6 +156,14 @@ export async function bootstrap() {
 
   // mount root Vue
   vue.$mount('br-app');
+
+  // notify Vue devtools extension of Vue presence
+  if(Vue.config.devtools) {
+    postMessage({
+      devtoolsEnabled: true,
+      vueDetected: true
+    }, '*');
+  }
 }
 
 // shared application bedrock config
