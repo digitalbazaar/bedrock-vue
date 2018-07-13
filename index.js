@@ -64,6 +64,7 @@ export function setRootVue(vue) {
     return;
   }
 
+  // TODO: support `vue` as a Promise
   if(!(vue && (typeof vue === 'function' || vue instanceof Vue))) {
     throw new Error(
       '`vue` must be a `Vue` instance or a factory function that returns ' +
@@ -108,9 +109,17 @@ export async function bootstrap() {
   window._bedrock = window._bedrock || {};
   window._bedrock.vue = {bootstrapped: true};
 
-  if(!rootVue) {
-    // only warn when rootVue is not deliberately set to `false`
-    if(rootVue !== false) {
+  let vue;
+
+  if(typeof rootVue === 'function') {
+    vue = await rootVue();
+  } else {
+    vue = await Promise.resolve(rootVue);
+  }
+
+  if(!vue) {
+    // only warn when root vue is not deliberately set to `false`
+    if(vue !== false) {
       console.warn(
         'The root Vue has not been set. You must import and call ' +
         'the `setRootModule()` method from `bedrock-vue`. ' +
@@ -122,14 +131,6 @@ export async function bootstrap() {
       root.removeChild(root.firstChild);
     }
     return;
-  }
-
-  let vue;
-
-  if(typeof rootVue === 'function') {
-    vue = await rootVue();
-  } else {
-    vue = rootVue;
   }
 
   if(vue.$router) {

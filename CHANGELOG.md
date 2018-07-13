@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+### Fixed
+- Fix crash when `setRootVue` receives a function that
+  resolves to `false` (indicating that bootstrapping the Vue
+  application should not occur).
+
 ## 1.0.2 - 2018-05-22
 
 ### Changed
