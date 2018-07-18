@@ -7,8 +7,6 @@
 
 import {ready} from 'bedrock-web';
 import BrApp from './BrApp.vue';
-import BrRoot from './BrRoot.vue';
-import NotFound from './NotFound.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
@@ -20,7 +18,7 @@ export function install(Vue, options) {
   Vue.use(VueRouter);
 
   // register default empty components
-  Vue.component('br-root', BrRoot);
+  Vue.component('br-root', () => import('./BrRoot.vue'));
   Vue.component('br-header', {render() {}});
   Vue.component('br-footer', {render() {}});
 
@@ -136,7 +134,7 @@ export async function bootstrap() {
   if(vue.$router) {
     // add not found component by default
     vue.$router.addRoutes([
-      {path: '*', component: NotFound}
+      {path: '*', component: () => import('./NotFound.vue')}
     ]);
 
     // update page titles by default
