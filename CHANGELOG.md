@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+### Added
+- Lazy load `BrRoot` and `NotFound` components. These
+  are lazy loaded as they may be replaced downstream
+  or never hit by the client.
+
 ## 1.0.3 - 2018-07-13
 
 ### Fixed
