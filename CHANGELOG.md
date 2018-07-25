@@ -1,5 +1,8 @@
 # bedrock-vue ChangeLog
 
+### Added
+- Include webpack config alias in package.json.
+
 ## 1.1.0 - 2018-07-18
 
 ### Added

@@ -16,14 +16,26 @@
     "browserDependencies": "all",
     "manifest": {
       "vue": {
-        "main": "dist/vue.runtime.min.js",
-        "module": "dist/vue.runtime.min.js",
         "browser": "dist/vue.runtime.min.js"
       },
       "vue-router": {
-        "main": "dist/vue-router.min.js",
-        "module": "dist/vue-router.min.js",
         "browser": "dist/vue-router.min.js"
+      }
+    },
+    "webpack": {
+      "vue": {
+        "resolve": {
+          "alias": {
+            "vue$": "dist/vue.runtime.min.js"
+          }
+        }
+      },
+      "vue-router": {
+        "resolve": {
+          "alias": {
+            "vue-router$": "dist/vue-router.min.js"
+          }
+        }
       }
     }
   }
