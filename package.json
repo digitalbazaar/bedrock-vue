@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bedrock-web": "^1.0.0",
-    "vue": "^2.5.16",
+    "vue": "^2.6.6",
     "vue-router": "^3.0.1"
   },
   "repository": {
