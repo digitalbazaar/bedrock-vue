@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+## 1.2.0 - xxxxxxxx
+
+### Changed
+- Upgrade Vue.js to version 2.6.
+
 ## 1.1.1 - 2018-07-25
 
 ### Added
