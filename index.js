@@ -18,7 +18,9 @@ export function install(Vue, options) {
   Vue.use(VueRouter);
 
   // register default empty components
-  Vue.component('br-root', () => import('./BrRoot.vue'));
+  Vue.component('br-root', () => import(
+    /* webpackChunkName: "BrRoot" */
+    './BrRoot.vue'));
   Vue.component('br-header', {render() {}});
   Vue.component('br-footer', {render() {}});
 
@@ -134,7 +136,9 @@ export async function bootstrap() {
   if(vue.$router) {
     // add not found component by default
     vue.$router.addRoutes([
-      {path: '*', component: () => import('./NotFound.vue')}
+      {path: '*', component: () => import(
+        /* webpackChunkName: "NotFound" */
+        './NotFound.vue')}
     ]);
 
     // update page titles by default

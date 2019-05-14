@@ -1,5 +1,8 @@
 # bedrock-vue ChangeLog
 
+### Changed
+- Added `webpackChunkName` to dynamic imports.
+
 ## 1.2.0 - 2019-02-19
 
 ### Changed
