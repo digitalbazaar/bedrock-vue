@@ -3,6 +3,9 @@
 ### Changed
 - Added `webpackChunkName` to dynamic imports.
 
+### Removed
+- Overrides unneeded with bedrock-views 7 + bedrock-webpack 3.
+
 ## 1.2.0 - 2019-02-19
 
 ### Changed

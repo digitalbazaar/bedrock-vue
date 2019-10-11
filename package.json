@@ -11,32 +11,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/bedrock-vue"
-  },
-  "bedrock": {
-    "browserDependencies": "all",
-    "manifest": {
-      "vue": {
-        "browser": "dist/vue.runtime.min.js"
-      },
-      "vue-router": {
-        "browser": "dist/vue-router.min.js"
-      }
-    },
-    "webpack": {
-      "vue": {
-        "resolve": {
-          "alias": {
-            "vue$": "dist/vue.runtime.min.js"
-          }
-        }
-      },
-      "vue-router": {
-        "resolve": {
-          "alias": {
-            "vue-router$": "dist/vue-router.min.js"
-          }
-        }
-      }
-    }
   }
 }
