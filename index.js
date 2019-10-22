@@ -170,4 +170,10 @@ export async function bootstrap() {
 }
 
 // shared application bedrock config
-export const config = {};
+export const config = {
+  contacts: {
+    support: {
+      email: null
+    }
+  }
+};
