@@ -3,8 +3,8 @@
     <h2>Page Not Found</h2>
     <div>
       <p>Sorry, but the page you requested was not found.</p>
-      <p>If this problem persists, please contact
-      <a :href="`mailto:support@${supportDomain}`">Customer Support</a>.</p>
+      <p v-if="supportEmail">If this problem persists, please contact
+      <a :href="`mailto:${supportEmail}`">Customer Support</a>.</p>
     </div>
   </div>
 </template>
@@ -12,8 +12,8 @@
 export default {
   name: 'NotFound',
   computed: {
-    supportDomain() {
-      return this.$config.data.supportDomain;
+    supportEmail() {
+      return this.$config.supportEmail;
     }
   }
 };
