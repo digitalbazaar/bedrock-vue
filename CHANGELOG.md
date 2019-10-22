@@ -2,6 +2,10 @@
 
 ### Changed
 - Added `webpackChunkName` to dynamic imports.
+- **BREAKING**: `NotFound` component uses `$config.supportEmail`.
+- **BREAKING**: Component `$config` defaults to empty object instead of
+  `window.data`. Applications need to setup `supportEmail` from a frontend
+  config.
 
 ### Removed
 - Overrides unneeded with bedrock-views 7 + bedrock-webpack 3.

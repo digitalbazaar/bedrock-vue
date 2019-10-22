@@ -170,4 +170,4 @@ export async function bootstrap() {
 }
 
 // shared application bedrock config
-export const config = {data: window.data};
+export const config = {};
