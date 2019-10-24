@@ -3,6 +3,9 @@
   "version": "1.2.1-0",
   "description": "Vue frontend framework running on Bedrock",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint '*.js' '*.vue'"
+  },
   "dependencies": {
     "bedrock-web": "^1.0.0",
     "vue": "^2.6.6",
@@ -11,5 +14,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/bedrock-vue"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-digitalbazaar": "^2.0.1",
+    "eslint-plugin-vue": "^5.2.3"
   }
 }
