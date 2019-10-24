@@ -1,8 +1,8 @@
 <template>
   <br-root>
-    <br-header></br-header>
-    <router-view></router-view>
-    <br-footer></br-footer>
+    <br-header />
+    <router-view />
+    <br-footer />
   </br-root>
 </template>
 <script>
