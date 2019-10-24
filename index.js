@@ -6,6 +6,7 @@
 'use strict';
 
 import {ready} from 'bedrock-web';
+import config from './config.js';
 import BrApp from './BrApp.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -169,11 +170,5 @@ export async function bootstrap() {
   }
 }
 
-// shared application bedrock config
-export const config = {
-  contacts: {
-    support: {
-      email: null
-    }
-  }
-};
+// shared application config
+export {config};
