@@ -20,10 +20,14 @@ export function install(Vue, options) {
 
   // register default empty components
   Vue.component('br-root', () => import(
-    /* webpackChunkName: "BrRoot" */
+    /* webpackChunkName: "bedrock-vue-core" */
     './BrRoot.vue'));
   Vue.component('br-header', {render() {}});
   Vue.component('br-footer', {render() {}});
+  // default generic top-level error component
+  Vue.component('br-error-base', () => import(
+    /* webpackChunkName: "bedrock-vue-core" */
+    './BrErrorBase.vue'));
 
   // auto install br-app
   Vue.component('br-app', BrApp);
@@ -135,6 +139,54 @@ export async function bootstrap() {
   }
 
   if(vue.$router) {
+    // http status codes with known handlers
+    // TODO: handle more codes
+    const httpStatusCodes = [403, 404, 503];
+
+    // check and handle HTTP meta status
+    let checkStatus = true;
+    vue.$router.beforeEach((to, from, next) => {
+      if(checkStatus) {
+        checkStatus = false;
+        // check for (single) meta HTTP status code
+        const statusElement =
+          document.querySelector('head meta[http-equiv="status"]');
+        if(statusElement) {
+          config.http.status = statusElement.getAttribute('content');
+          config.http.statusCode = parseInt(config.http.status.split()[0], 10);
+
+          let name;
+          if(httpStatusCodes.includes(config.http.statusCode)) {
+            name = `http-error-${config.http.statusCode}`;
+          } else {
+            name = `http-error`;
+          }
+          next({name});
+          return;
+        }
+      }
+      next();
+    });
+
+    // add status routes
+    for(const statusCode of httpStatusCodes) {
+      vue.$router.addRoutes([{
+        path: `/_/http-error/${statusCode}`,
+        name: `http-error-${statusCode}`,
+        component: () => import(
+          /* webpackChunkName: "bedrock-vue-core" */
+          `./HttpError${statusCode}.vue`)
+      }]);
+    }
+    // fallback for other status codes
+    vue.$router.addRoutes([{
+      path: `/_/http-error`,
+      name: `http-error`,
+      component: () => import(
+        /* webpackChunkName: "bedrock-vue-core" */
+        `./HttpError.vue`)
+    }]);
+
     // add not found component by default
     vue.$router.addRoutes([
       {path: '*', component: () => import(
