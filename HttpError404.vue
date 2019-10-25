@@ -1,18 +1,18 @@
 <template>
-  <br-error>
+  <http-error>
     <template v-slot:title>
       Page Not Found
     </template>
 
     <p>Sorry, the resource you requested was not found.</p>
-  </br-error>
+  </http-error>
 </template>
 <script>
-import BrError from './BrError.vue';
+import HttpError from './HttpError.vue';
 export default {
-  name: 'NotFound',
+  name: 'HttpError404',
   components: {
-    BrError
+    HttpError
   }
 };
 </script>
