@@ -15,11 +15,6 @@ export default {
       email: null
     }
   },
-  // initial page load http status string and code, if available
-  http: {
-    status: null,
-    statusCode: null
-  },
   ui: {
     // custom component names
     components: {

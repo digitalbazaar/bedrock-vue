@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: 'BrErrorBase',
+  name: 'BrErrorBase'
 };
 </script>
 <style>

@@ -5,18 +5,15 @@
 - **BREAKING**: `NotFound` component uses `$config.contacts.support.email`.
 - **BREAKING**: Component `$config` defaults to shared config object instead of
   `window.data`. Applications need to update vars as appropriate. The only
-  defined key now is `$config.contacts.support.email`.
+  optional defined key now is `$config.contacts.support.email`.
 
 ### Added
 - Common config schema:
   - `config.contacts.support.email` for support emails.
-  - `config.http.{status,statusCode}` for HTML meta HTTP status code.
-- Handling HTTP errors via meta HTML tag. Redirects to a special error page
-  endpoint.
-- Error page hierarchy includes a custom and generic HTTP error pages, a
-  generic error page, and a base error page. Base page component name can be
-  changed with the frontend `config.ui.components['br-error-base']` value.
-  Allows for custom styling vs generic HTML.
+- Error page system includes a generic error page, and a base error page. Base
+  page component name can be changed with the frontend
+  `config.ui.components['br-error-base']` value. Allows for custom styling
+  instead of basic HTML.
 
 ### Removed
 - Overrides unneeded with bedrock-views 7 + bedrock-webpack 3.
