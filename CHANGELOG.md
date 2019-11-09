@@ -1,5 +1,7 @@
 # bedrock-vue ChangeLog
 
+## 2.0.0 - 2019-11-08
+
 ### Changed
 - Added `webpackChunkName` to dynamic imports.
 - **BREAKING**: `NotFound` component uses `$config.contacts.support.email`.
