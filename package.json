@@ -2,6 +2,7 @@
   "name": "bedrock-vue",
   "version": "2.0.1-0",
   "description": "Vue frontend framework running on Bedrock",
+  "license": "SEE LICENSE IN LICENSE.md",
   "main": "index.js",
   "scripts": {
     "lint": "eslint '*.js' '*.vue'"
