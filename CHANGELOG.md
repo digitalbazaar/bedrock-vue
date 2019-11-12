@@ -1,5 +1,8 @@
 # bedrock-vue ChangeLog
 
+### Changed
+- Update dependencies.
+
 ## 2.0.0 - 2019-11-08
 
 ### Changed
