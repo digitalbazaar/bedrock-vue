@@ -13,18 +13,18 @@ import VueRouter from 'vue-router';
 
 /* global
  *   VUE_DEVTOOLS
- *   VUE_PRODUCTIONTIP
  *   VUE_PERFORMANCE
+ *   VUE_PRODUCTIONTIP
  */
 // early Vue config setup from possible defines
 if(typeof VUE_DEVTOOLS !== 'undefined') {
   Vue.config.devtools = JSON.parse(VUE_DEVTOOLS);
 }
-if(typeof VUE_PRODUCTIONTIP !== 'undefined') {
-  Vue.config.productionTip = JSON.parse(VUE_PRODUCTIONTIP);
-}
 if(typeof VUE_PERFORMANCE !== 'undefined') {
   Vue.config.performance = JSON.parse(VUE_PERFORMANCE);
+}
+if(typeof VUE_PRODUCTIONTIP !== 'undefined') {
+  Vue.config.productionTip = JSON.parse(VUE_PRODUCTIONTIP);
 }
 
 // autostart once bedrock web app is ready
