@@ -1,5 +1,8 @@
 # bedrock-vue ChangeLog
 
+### Added
+- Allow defines for Vue.config.{devtools,productionTip,performance}.
+
 ## 2.0.1 - 2019-11-12
 
 ### Changed
