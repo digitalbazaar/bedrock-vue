@@ -1,5 +1,7 @@
 # bedrock-vue ChangeLog
 
+## 2.1.2 - 2021-05-05
+
 ### Fixed
 - Fix linting issues.
 
