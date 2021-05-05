@@ -1,6 +1,6 @@
 <template>
   <br-error>
-    <template v-slot:title>
+    <template #title>
       Page Not Found
     </template>
 

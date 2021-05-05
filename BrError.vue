@@ -1,10 +1,10 @@
 <template>
   <component :is="base">
-    <template v-slot:title>
+    <template #title>
       <slot name="title" />
     </template>
     <slot />
-    <template v-slot:contact>
+    <template #contact>
       <slot name="contact">
         <p v-if="supportEmail">
           If you believe this is an error, please contact
