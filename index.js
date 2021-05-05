@@ -3,6 +3,8 @@
  *
  * Copyright (c) 2018-2021 Digital Bazaar, Inc. All rights reserved.
  */
+/* eslint-disable vue/one-component-per-file */
+/* eslint-disable vue/component-definition-name-casing */
 import {ready} from 'bedrock-web';
 import config from './config.js';
 import BrApp from './BrApp.vue';
@@ -39,26 +41,19 @@ export function install(Vue, options) {
   Vue.use(VueRouter);
 
   // register default empty components to be optionally overwritten
-  Vue.component('BrRoot', () => import(
+  Vue.component('br-root', () => import(
     /* webpackChunkName: "bedrock-vue-core" */
     './BrRoot.vue'));
-  // eslint-disable-next-line vue/one-component-per-file
-  Vue.component('BrHeader', {
-    // eslint-disable-next-line vue/require-render-return
-    render() {}
-  });
-  // eslint-disable-next-line vue/one-component-per-file
-  Vue.component('BrFooter', {
-    // eslint-disable-next-line vue/require-render-return
-    render() {}
-  });
-  // default generic top-level error component
-  Vue.component('BrErrorBase', () => import(
+  // eslint-disable-next-line vue/require-render-return
+  Vue.component('br-header', {render() {}});
+  // eslint-disable-next-line vue/require-render-return
+  Vue.component('br-footer', {render() {}});
+  Vue.component('br-error-base', () => import(
     /* webpackChunkName: "bedrock-vue-core" */
     './BrErrorBase.vue'));
 
   // auto install br-app
-  Vue.component('BrApp', BrApp);
+  Vue.component('br-app', BrApp);
 
   // include `config` in Vue components
   Vue.mixin({
