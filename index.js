@@ -1,52 +1,64 @@
 /*!
  * Vue frontend framework running on Bedrock.
  *
- * Copyright (c) 2018 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2018-2021 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
 import {ready} from 'bedrock-web';
 import config from './config.js';
 import BrApp from './BrApp.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-/* global
- *   VUE_DEVTOOLS
- *   VUE_PERFORMANCE
- *   VUE_PRODUCTIONTIP
- */
 // early Vue config setup from possible defines
 if(typeof VUE_DEVTOOLS !== 'undefined') {
+  // eslint-disable-next-line no-undef
   Vue.config.devtools = JSON.parse(VUE_DEVTOOLS);
 }
 if(typeof VUE_PERFORMANCE !== 'undefined') {
+  // eslint-disable-next-line no-undef
   Vue.config.performance = JSON.parse(VUE_PERFORMANCE);
 }
 if(typeof VUE_PRODUCTIONTIP !== 'undefined') {
+  // eslint-disable-next-line no-undef
   Vue.config.productionTip = JSON.parse(VUE_PRODUCTIONTIP);
 }
+
+/**
+ * Auto starts the main Vue application. By default, this function will
+ * call `bootstrap`. It can be overridden via `setStart` to run some custom
+ * function instead.
+ */
+export let start = bootstrap;
 
 // autostart once bedrock web app is ready
 ready.then(() => start());
 
+// eslint-disable-next-line no-unused-vars
 export function install(Vue, options) {
   // auto install router
   Vue.use(VueRouter);
 
-  // register default empty components
-  Vue.component('br-root', () => import(
+  // register default empty components to be optionally overwritten
+  Vue.component('BrRoot', () => import(
     /* webpackChunkName: "bedrock-vue-core" */
     './BrRoot.vue'));
-  Vue.component('br-header', {render() {}});
-  Vue.component('br-footer', {render() {}});
+  // eslint-disable-next-line vue/one-component-per-file
+  Vue.component('BrHeader', {
+    // eslint-disable-next-line vue/require-render-return
+    render() {}
+  });
+  // eslint-disable-next-line vue/one-component-per-file
+  Vue.component('BrFooter', {
+    // eslint-disable-next-line vue/require-render-return
+    render() {}
+  });
   // default generic top-level error component
-  Vue.component('br-error-base', () => import(
+  Vue.component('BrErrorBase', () => import(
     /* webpackChunkName: "bedrock-vue-core" */
     './BrErrorBase.vue'));
 
   // auto install br-app
-  Vue.component('br-app', BrApp);
+  Vue.component('BrApp', BrApp);
 
   // include `config` in Vue components
   Vue.mixin({
@@ -93,13 +105,6 @@ export function setRootVue(vue) {
   }
   rootVue = vue;
 }
-
-/**
- * Auto starts the main Vue application. By default, this function will
- * call `bootstrap`. It can be overridden via `setStart` to run some custom
- * function instead.
- */
-export let start = bootstrap;
 
 /**
  * Replaces `start` with another function. The function `fn` is responsible
