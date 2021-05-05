@@ -161,7 +161,7 @@ export async function bootstrap() {
       component: () => import(
         /* webpackChunkName: "NotFound" */
         './NotFound.vue')
-      });
+    });
 
     // update page titles by default
     const defaultTitle = document.title;
