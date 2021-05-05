@@ -46,6 +46,7 @@ export function install(Vue, options) {
   Vue.component('br-header', {render() {}});
   // eslint-disable-next-line vue/require-render-return
   Vue.component('br-footer', {render() {}});
+  // default generic top-level error component
   Vue.component('br-error-base', () => import(
     /* webpackChunkName: "bedrock-vue-core" */
     './BrErrorBase.vue'));
