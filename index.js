@@ -11,17 +11,15 @@ import BrApp from './BrApp.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+/* global VUE_DEVTOOLS, VUE_PERFORMANCE, VUE_PRODUCTIONTIP */
 // early Vue config setup from possible defines
 if(typeof VUE_DEVTOOLS !== 'undefined') {
-  // eslint-disable-next-line no-undef
   Vue.config.devtools = JSON.parse(VUE_DEVTOOLS);
 }
 if(typeof VUE_PERFORMANCE !== 'undefined') {
-  // eslint-disable-next-line no-undef
   Vue.config.performance = JSON.parse(VUE_PERFORMANCE);
 }
 if(typeof VUE_PRODUCTIONTIP !== 'undefined') {
-  // eslint-disable-next-line no-undef
   Vue.config.productionTip = JSON.parse(VUE_PRODUCTIONTIP);
 }
 
