@@ -156,11 +156,12 @@ export async function bootstrap() {
 
   if(vue.$router) {
     // add not found component by default
-    vue.$router.addRoutes([
-      {path: '*', component: () => import(
+    vue.$router.addRoute({
+      path: '*',
+      component: () => import(
         /* webpackChunkName: "NotFound" */
-        './NotFound.vue')}
-    ]);
+        './NotFound.vue')
+      });
 
     // update page titles by default
     const defaultTitle = document.title;

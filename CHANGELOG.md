@@ -1,5 +1,11 @@
 # bedrock-vue ChangeLog
 
+## 2.1.1 - 2021-05-xx
+
+### Changed
+- Update dependencies.
+- Use `$router.addRoute` instead of deprecated `$router.addRoutes`.
+
 ## 2.1.0 - 2020-03-30
 
 ### Added
