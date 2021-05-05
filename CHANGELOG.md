@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 2.1.1 - 2021-05-xx
+## 2.1.1 - 2021-05-05
 
 ### Changed
 - Update dependencies.
