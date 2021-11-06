@@ -91,7 +91,6 @@ export function setRootVue(vue) {
     return;
   }
 
-  // TODO: support `vue` as a Promise
   if(!(vue && (typeof vue === 'function' || vue instanceof Vue))) {
     throw new Error(
       '`vue` must be a `Vue` instance or a factory function that returns ' +
