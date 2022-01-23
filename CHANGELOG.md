@@ -1,5 +1,16 @@
 # bedrock-vue ChangeLog
 
+## 2.2.0 - 2022-01-xx
+
+### Added
+- Include vue config under `vue` property in shared config from
+  `bedrock-web`.
+
+### Fixed
+- Properly mark dependencies as peer dependencies as the code will not
+  function properly if different versions are installed and used in a single
+  web app.
+
 ## 2.1.2 - 2021-05-05
 
 ### Fixed

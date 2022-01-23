@@ -1,14 +1,12 @@
 /*!
- * Vue frontend config.
- *
- * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2019-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+// import shared web application config
+import {config} from 'bedrock-web';
 
-// shared application config
 // simple keys used for general purpose config
 // package name keys for special purpose config grouping
-export default {
+const vueConfig = {
   // common contact details
   contacts: {
     support: {
@@ -22,3 +20,7 @@ export default {
     }
   }
 };
+
+// expose vue config in main shared web app config under `vue`
+config.vue = vueConfig;
+export {vueConfig as config};

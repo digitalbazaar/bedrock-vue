@@ -1,13 +1,11 @@
 /*!
- * Vue frontend framework running on Bedrock.
- *
- * Copyright (c) 2018-2021 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2018-2022 Digital Bazaar, Inc. All rights reserved.
  */
 /* eslint-disable vue/one-component-per-file */
 /* eslint-disable vue/component-definition-name-casing */
-import {ready} from 'bedrock-web';
-import config from './config.js';
 import BrApp from './BrApp.vue';
+import {config} from './config.js';
+import {ready} from 'bedrock-web';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
@@ -54,7 +52,8 @@ export function install(Vue, options) {
   // auto install br-app
   Vue.component('br-app', BrApp);
 
-  // include `config` in Vue components
+  // include vue `config` in Vue components; this config is just the
+  // `config.vue` portion of the shared web app config
   Vue.mixin({
     beforeCreate() {
       const options = this.$options;
