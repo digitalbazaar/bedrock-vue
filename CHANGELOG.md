@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 2.2.0 - 2022-01-xx
+## 2.2.0 - 2022-01-23
 
 ### Added
 - Include vue config under `vue` property in shared config from
