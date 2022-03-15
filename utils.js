@@ -1,9 +1,11 @@
 /*!
  * Copyright (c) 2019-2022 Digital Bazaar, Inc. All rights reserved.
  */
+import Vue from 'vue';
+
 export function makeReactive({
   target, options: {
-    addProperty = defaultPropertySetter,
+    addProperty = Vue.set,
     setProperty = defaultPropertySetter
   }
 } = {}) {
