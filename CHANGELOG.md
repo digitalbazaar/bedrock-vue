@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+## 2.3.0 - 2022-03-15
+
+### Added
+- Add `makeReactive` utility API.
+
 ## 2.2.0 - 2022-01-23
 
 ### Added
