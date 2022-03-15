@@ -4,10 +4,7 @@
 import Vue from 'vue';
 
 export function makeReactive({
-  target, options: {
-    addProperty = Vue.set,
-    setProperty = defaultPropertySetter
-  }
+  target, addProperty = Vue.set, setProperty = defaultPropertySetter
 } = {}) {
   return new Proxy(target, createHandler({addProperty, setProperty}));
 }
