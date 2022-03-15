@@ -21,6 +21,9 @@ if(typeof VUE_PRODUCTIONTIP !== 'undefined') {
   Vue.config.productionTip = JSON.parse(VUE_PRODUCTIONTIP);
 }
 
+// export utils
+export {makeReactive} from './utils.js';
+
 /**
  * Auto starts the main Vue application. By default, this function will
  * call `bootstrap`. It can be overridden via `setStart` to run some custom
