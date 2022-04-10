@@ -5,10 +5,12 @@
     <br-footer />
   </br-root>
 </template>
+
 <script>
 export default {
   name: 'BrApp'
 };
 </script>
+
 <style>
 </style>

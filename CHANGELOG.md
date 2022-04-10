@@ -1,5 +1,11 @@
 # bedrock-vue ChangeLog
 
+## 3.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Rename package to `@bedrock/vue`.
+- **BREAKING**: Convert to module (ESM).
+
 ## 2.3.0 - 2022-03-16
 
 ### Added

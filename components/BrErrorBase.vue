@@ -5,10 +5,12 @@
     <slot name="contact" />
   </div>
 </template>
+
 <script>
 export default {
   name: 'BrErrorBase'
 };
 </script>
+
 <style>
 </style>
