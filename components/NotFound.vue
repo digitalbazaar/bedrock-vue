@@ -7,8 +7,10 @@
     <p>Sorry, the resource you requested was not found.</p>
   </br-error>
 </template>
+
 <script>
 import BrError from './BrError.vue';
+
 export default {
   name: 'NotFound',
   components: {
@@ -16,5 +18,6 @@ export default {
   }
 };
 </script>
+
 <style>
 </style>

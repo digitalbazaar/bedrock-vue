@@ -1,14 +1,19 @@
 {
-  "name": "bedrock-vue",
+  "name": "@bedrock/vue",
   "version": "2.3.1-0",
+  "type": "module",
   "description": "Vue frontend framework running on Bedrock",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "index.js",
+  "module": "./lib/index.js",
   "scripts": {
-    "lint": "eslint '*.js' '*.vue'"
+    "lint": "eslint ."
   },
+  "files": [
+    "lib/*",
+    "components/*"
+  ],
   "peerDependencies": {
-    "bedrock-web": "^1.2.0",
+    "@bedrock/web": "^2.0.0",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1"
   },
@@ -17,8 +22,11 @@
     "url": "https://github.com/digitalbazaar/bedrock-vue"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
+    "eslint": "^7.32.0",
     "eslint-config-digitalbazaar": "^2.8.0",
-    "eslint-plugin-vue": "^7.9.0"
+    "eslint-plugin-jsdoc": "^37.9.7",
+    "eslint-plugin-vue": "^8.6.0",
+    "jsdoc": "^3.6.4",
+    "jsdoc-to-markdown": "^7.1.1"
   }
 }

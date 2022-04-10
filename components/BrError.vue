@@ -14,6 +14,7 @@
     </template>
   </component>
 </template>
+
 <script>
 export default {
   name: 'BrError',
@@ -27,5 +28,6 @@ export default {
   }
 };
 </script>
+
 <style>
 </style>
