@@ -14,8 +14,8 @@
   ],
   "peerDependencies": {
     "@bedrock/web": "^2.0.0",
-    "vue": "^2.6.12",
-    "vue-router": "^3.5.1"
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
   },
   "repository": {
     "type": "git",
