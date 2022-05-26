@@ -1,5 +1,25 @@
 # bedrock-vue ChangeLog
 
+## 4.0.0 - 2022-05-xx
+
+### Added
+- Add `initialize()`, `augmentRouter`, and `getRootApi` APIs. See README for
+  migration tips.
+
+### Changed
+- **BREAKING**: Upgrade to Vue 3, drop Vue 2 support. See README for migration
+  tips.
+
+### Removed
+- **BREAKING**: Remove Vue 2 support.
+- **BREAKING**: Remove `makeReactive()` API; import `reactive` from `vue`
+  instead.
+- **BREAKING**: Remove `setRootVue`; use `initialize()` instead.
+- **BREAKING**: Remove default `BrApp`, `BrRoot`, `BrHeader`, `BrFooter`
+  components; see README for migration tips.
+- **BREAKING**: Remove environmental variable setup of debugging / devtools;
+  see Vue 3 documentation for how to enable extra debugging tools.
+
 ## 3.0.2 - 2022-04-10
 
 ### Fixed
