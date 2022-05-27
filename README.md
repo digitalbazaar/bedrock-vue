@@ -4,6 +4,8 @@
 
 ## Bundling
 
+TODO: This section needs to be updated for Vue 3 changes.
+
 Special constants are available to setup the [Vue Global Config][] at bundle
 time. If unset, the config values are left at their defaults.
 
