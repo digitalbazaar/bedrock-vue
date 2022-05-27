@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 4.0.0 - 2022-05-xx
+## 4.0.0 - 2022-05-26
 
 ### Added
 - Add `initialize()`, `augmentRouter`, and `getRootApi` APIs. See README for
