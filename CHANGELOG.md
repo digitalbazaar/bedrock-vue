@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+## 4.0.1 - 2022-05-xx
+
+### Fixed
+- Remove obsolete `next` term from `updateTitle` internal route guard.
+
 ## 4.0.0 - 2022-05-26
 
 ### Added
