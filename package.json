@@ -13,7 +13,7 @@
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "@bedrock/web": "^2.0.0",
+    "@bedrock/web": "github:digitalbazaar/bedrock-web#convert-to-module",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
   },
