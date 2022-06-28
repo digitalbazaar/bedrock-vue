@@ -4,6 +4,7 @@
 
 ### Changed
 - **BREAKING**: Use `exports` instead of `module`.
+- Lint module.
 
 ## 4.0.1 - 2022-05-28
 
