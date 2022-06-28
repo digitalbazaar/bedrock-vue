@@ -5,13 +5,13 @@
   "description": "Vue frontend framework running on Bedrock",
   "license": "SEE LICENSE IN LICENSE.md",
   "exports": "./lib/index.js",
+  "files": [
+    "lib/**/*.js",
+    "components/**/*.vue"
+  ],
   "scripts": {
     "lint": "eslint ."
   },
-  "files": [
-    "lib/*",
-    "components/*"
-  ],
   "peerDependencies": {
     "@bedrock/web": "^2.0.0",
     "vue": "^3.2.36",
