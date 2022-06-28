@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+## 5.0.0 - 2022-xx-xx
+
+### Changed
+- **BREAKING**: Use `exports` instead of `module`.
+
 ## 4.0.1 - 2022-05-28
 
 ### Fixed
