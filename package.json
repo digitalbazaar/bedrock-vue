@@ -25,13 +25,13 @@
     "url": "https://github.com/digitalbazaar/bedrock-vue"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
-    "eslint-config-digitalbazaar": "^4.0.1",
-    "eslint-plugin-jsdoc": "^39.3.3",
-    "eslint-plugin-unicorn": "^43.0.2",
-    "eslint-plugin-vue": "^9.1.1",
-    "jsdoc": "^3.6.10",
-    "jsdoc-to-markdown": "^7.1.1"
+    "eslint": "^8.51.0",
+    "eslint-config-digitalbazaar": "^5.0.1",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "eslint-plugin-vue": "^9.17.0",
+    "jsdoc": "^4.0.2",
+    "jsdoc-to-markdown": "^8.0.0"
   },
   "engines": {
     "node": ">=18"
