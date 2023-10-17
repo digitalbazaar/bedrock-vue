@@ -1,5 +1,12 @@
 # bedrock-vue ChangeLog
 
+## 6.0.0 - 2023-10-TBD
+
+### Changed
+- **BREAKING**: Drop support for Node.js < 18.
+- **BREAKING**: Update peer dep `@bedrock/web` to v4.0. Drops support for
+  Node.js < 18.
+
 ## 5.0.1 - 2022-08-22
 
 ### Fixed
