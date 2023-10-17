@@ -49,7 +49,8 @@ was the root Vue component and it doubled as the global root Vue App. Once
 would be mounted.
 
 Now, users of this library must instead call `initialize` and pass a
-`beforeMount` function in order to cause the root Vue app to mount. The `beforeMount` function must return the root Vue component to be rendered in the
+`beforeMount` function in order to cause the root Vue app to mount. The
+`beforeMount` function must return the root Vue component to be rendered in the
 root Vue app (it may return it as a Promise if asynchronous behavior is
 required).
 
