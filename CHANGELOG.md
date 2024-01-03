@@ -1,10 +1,5 @@
 # bedrock-vue ChangeLog
 
-## 5.1.0 - 2023-10-TBD
-
-### Changed
-- Update dev deps to latest.
-
 ## 5.0.1 - 2022-08-22
 
 ### Fixed
