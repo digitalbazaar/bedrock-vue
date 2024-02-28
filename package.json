@@ -1,6 +1,6 @@
 {
   "name": "@bedrock/vue",
-  "version": "5.0.2-0",
+  "version": "5.1.0",
   "type": "module",
   "description": "Vue frontend framework running on Bedrock",
   "license": "Apache-2.0",
