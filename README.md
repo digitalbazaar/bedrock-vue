@@ -86,7 +86,7 @@ So, in order to recreate the behavior that previous versions of library
 provided, developers can add a `BrApp.vue` (or use any other name of their
 choosing) root Vue component like this:
 
-```
+```html
 <template>
   <br-root>
     <br-header />
@@ -107,7 +107,7 @@ export default {
 
 Then, it can be imported and returned from `beforeMount`:
 
-```
+```js
 import {initialize} as brVue from '@bedrock/vue';
 import BrApp from '../components/BrApp.vue';
 
@@ -130,7 +130,7 @@ function now, instead of installing a Vue plugin and then using a constructor.
 
 Previously:
 
-```
+```js
 import {setRootVue} from '@bedrock/vue';
 import VueRouter from 'vue-router';
 
@@ -147,7 +147,7 @@ setRootVue(async () => {
 
 Now:
 
-```
+```js
 import {initialize, augmentRouter} from '@bedrock/vue';
 import {createRouter, createWebHistory} from 'vue-router';
 import MyApp from '../components/MyApp.vue';
