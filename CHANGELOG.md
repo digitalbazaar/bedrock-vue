@@ -1,5 +1,10 @@
 # bedrock-vue ChangeLog
 
+## 5.1.0 - 2024-mm-dd
+
+### Changed
+- Relicense under the Apache-2.0 license.
+
 ## 5.0.1 - 2022-08-22
 
 ### Fixed

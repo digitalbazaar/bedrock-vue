@@ -3,7 +3,7 @@
   "version": "5.0.2-0",
   "type": "module",
   "description": "Vue frontend framework running on Bedrock",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "Apache-2.0",
   "exports": {
     ".": "./lib/index.js",
     "./components/": "./components/"
