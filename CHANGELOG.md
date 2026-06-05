@@ -1,5 +1,14 @@
 # bedrock-vue ChangeLog
 
+## 5.2.0 - 2026-xx-xx
+
+### Changed
+- Update dependencies.
+  - `@bedrock/web@3.1.0`.
+  - `vue@3.5.38`.
+  - `vue-router@5.1.0`.
+- Update dev dependencies.
+
 ## 5.1.0 - 2024-02-28
 
 ### Changed
