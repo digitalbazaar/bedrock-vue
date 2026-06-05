@@ -1,5 +1,12 @@
 # bedrock-vue ChangeLog
 
+## 5.2.0 - 2026-06-04
+
+### Changed
+- Add support for `vue-router` v5 by widening the `vue-router` peer dependency
+  range to `^4.0.15 || ^5.0.0`. There are no API changes; v5 is a non-breaking
+  release that merges `unplugin-vue-router` into the core package.
+
 ## 5.1.0 - 2024-02-28
 
 ### Changed

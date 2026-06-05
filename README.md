@@ -127,6 +127,8 @@ need to be defined by the developer as well.
 
 Vue 3.x uses a new router. This router needs to be created via an imported
 function now, instead of installing a Vue plugin and then using a constructor.
+Both `vue-router` v4 and v5 are supported; the example below is unchanged for
+either version.
 
 Previously:
 
