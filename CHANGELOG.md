@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 5.2.0 - 2026-xx-xx
+## 5.2.0 - 2026-06-15
 
 ### Changed
 - Update dependencies.
