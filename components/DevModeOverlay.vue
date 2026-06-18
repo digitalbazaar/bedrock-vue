@@ -70,19 +70,37 @@ export default {
 <style scoped>
 .dev-mode-overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 360px;
-  max-width: 100vw;
   z-index: 2147483647;
   display: flex;
   flex-direction: column;
   background: #1e1e1e;
   color: #f0f0f0;
-  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.4);
   font-family: system-ui, sans-serif;
   font-size: 14px;
+  /* tablet / desktop: docked right rail */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  max-width: 100vw;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* phone: bottom sheet (slides up from the bottom, full width) */
+@media (max-width: 600px) {
+  .dev-mode-overlay {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 70vh;
+    max-height: 70vh;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.4);
+  }
 }
 .dev-mode-overlay__header {
   display: flex;

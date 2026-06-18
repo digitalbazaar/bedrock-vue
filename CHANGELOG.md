@@ -9,7 +9,9 @@
   the panel is opened/closed via a toggle signal (`openDevOverlay`,
   `closeDevOverlay`, `toggleDevOverlay`) rather than a built-in key listener. An
   opt-in `createTripleKeyDetector()` helper is provided for apps that want a
-  key trigger. Off by default with no production behavior change.
+  key trigger. Off by default with no production behavior change. The panel is
+  responsive: a right-hand rail on tablet/desktop and a bottom sheet on phone
+  widths.
 
 ## 5.2.0 - 2026-06-15
 
