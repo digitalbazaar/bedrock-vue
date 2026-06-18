@@ -17,6 +17,11 @@
   "Log" tool is auto-registered that renders entries by type (text, collapsible
   JSON, error + stack, dimmed null/undefined) and turns URLs in text into
   clickable links. `getDevLogEntries()` and `clearDevLog()` are also exported.
+- Add `createTapTrigger()`, an opt-in corner-tap trigger for opening the
+  dev-mode overlay on touch devices (where the key trigger is unusable). Tapping
+  a configurable screen corner a number of times in quick succession fires the
+  callback; like `createTripleKeyDetector()`, it is opt-in and wired by the host
+  app to `toggleDevOverlay()`.
 
 ## 5.2.0 - 2026-06-15
 

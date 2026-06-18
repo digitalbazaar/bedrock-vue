@@ -216,6 +216,26 @@ detector.install();
 // later: detector.uninstall();
 ```
 
+On touch devices the key trigger is unusable, so a corner-tap trigger is
+provided as a second opt-in helper. Tapping a screen corner a number of times
+in quick succession opens the overlay:
+
+```js
+import {createTapTrigger, toggleDevOverlay} from '@bedrock/vue';
+
+// opens the overlay when the top-right corner is tapped 5 times within ~2s
+const trigger = createTapTrigger({
+  corner: 'top-right',   // or top-left / bottom-left / bottom-right
+  taps: 5,
+  onTrigger: toggleDevOverlay
+});
+trigger.install();
+// later: trigger.uninstall();
+```
+
+The corner hit-zone is small and invisible, so normal taps are unaffected; only
+a deliberate repeated tap in the corner triggers it.
+
 ### Logging values (`devLog`)
 
 The most common use is logging values to the overlay — the dev-mode equivalent
