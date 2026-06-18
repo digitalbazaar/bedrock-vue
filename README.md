@@ -216,9 +216,39 @@ detector.install();
 // later: detector.uninstall();
 ```
 
+### Logging values (`devLog`)
+
+The most common use is logging values to the overlay — the dev-mode equivalent
+of `console.log`. `devLog()` is callable from anywhere and requires no setup:
+when dev mode is on, the shell auto-registers a built-in **Log** tool that
+displays the entries.
+
+```js
+import {devLog} from '@bedrock/vue';
+
+devLog('did loaded');                         // info, plain text
+devLog.info('server returns 200');
+devLog.warn('exchange retried', {label: 'scanner'});
+devLog.error(new Error('exchange timeout'));  // message + stack
+devLog(vcObject, {label: 'issued VC'});       // collapsible JSON
+```
+
+The Log tool renders each entry **by type**: strings and primitives as text,
+objects and arrays as collapsible pretty-printed JSON (with a copy button),
+`Error`s as message + stack, and `null`/`undefined` as a dimmed literal. Any
+`http(s)` URLs inside text entries are rendered as clickable links with their
+own copy button. Entries carry an optional `label` and a severity
+(`info`/`warn`/`error`) that drives an icon and color. The buffer keeps the most
+recent 50 entries; `clearDevLog()` empties it and `getDevLogEntries()` returns
+the reactive list.
+
+When dev mode is off, `devLog()` is a cheap no-op path (the buffer is never
+shown and the Log tool is never loaded).
+
 ### Registering a tool
 
-The overlay starts empty. Consumers add tools with `registerDevTool()`, passing
+For tools that need their own interactive UI (forms, buttons, custom widgets)
+rather than just displaying a value, add them with `registerDevTool()`, passing
 a Vue component to render in the panel:
 
 ```js
@@ -237,6 +267,10 @@ it is **not** registered automatically. Tools (and any data they read or write)
 are owned entirely by the consumer that registers them — this library only
 provides the panel and the open/close mechanism. Use `unregisterDevTool(id)` to
 remove a tool.
+
+The panel is responsive: it docks as a right-hand rail on tablet and desktop
+widths and becomes a bottom sheet (full width, ~70% height) on phone-sized
+viewports (under 600px).
 
 ### Production bundles
 
