@@ -1,5 +1,16 @@
 # bedrock-vue ChangeLog
 
+## 5.3.0 - 2026-06-dd
+
+### Added
+- Add a developer-mode overlay shell. When the `bedrock.devMode` `localStorage`
+  flag is set, a dev-only panel is lazily loaded and mounted as a sibling of the
+  root Vue app. Consumers contribute their own tools via `registerDevTool()`;
+  the panel is opened/closed via a toggle signal (`openDevOverlay`,
+  `closeDevOverlay`, `toggleDevOverlay`) rather than a built-in key listener. An
+  opt-in `createTripleKeyDetector()` helper is provided for apps that want a
+  key trigger. Off by default with no production behavior change.
+
 ## 5.2.0 - 2026-06-15
 
 ### Changed

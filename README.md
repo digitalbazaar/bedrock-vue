@@ -168,6 +168,85 @@ initialize({
 })
 ```
 
+## Developer Mode
+
+`@bedrock/vue` ships a developer-only overlay shell: a panel that any consuming
+app or library can populate with its own debugging tools. It is intended for
+desktop development where hardware (camera) or live counterparties are
+unavailable. It is off by default and ships nothing to end users unless a
+developer explicitly enables it.
+
+### Enabling it
+
+Developer mode is gated by a `localStorage` flag named `bedrock.devMode`. Any
+truthy value enables it. Set it from the browser DevTools console (no rebuild):
+
+```js
+localStorage.setItem('bedrock.devMode', '1');
+```
+
+When the flag is absent or falsy, the overlay chunk is never loaded and there
+is zero behavior change in production. Remove the flag (or set it to an empty
+value) to disable.
+
+### Opening the overlay
+
+The overlay is **toggled by a signal**, not by a key listener that this library
+installs. `@bedrock/vue` does not claim a global key on a consumer app's
+behalf; the host app owns keybindings. Call any of these to drive the panel:
+
+```js
+import {
+  openDevOverlay, closeDevOverlay, toggleDevOverlay
+} from '@bedrock/vue';
+```
+
+A triple-key trigger is provided as an **opt-in** helper. Wire it up wherever
+your app arbitrates keys:
+
+```js
+import {createTripleKeyDetector, toggleDevOverlay} from '@bedrock/vue';
+
+// toggles the overlay when backtick (`) is pressed three times within ~500ms
+const detector = createTripleKeyDetector({
+  key: '`',
+  onTrigger: toggleDevOverlay
+});
+detector.install();
+// later: detector.uninstall();
+```
+
+### Registering a tool
+
+The overlay starts empty. Consumers add tools with `registerDevTool()`, passing
+a Vue component to render in the panel:
+
+```js
+import {registerDevTool} from '@bedrock/vue';
+import DevToolExample from '@bedrock/vue/components/DevToolExample.vue';
+
+registerDevTool({
+  id: 'example',
+  label: 'Example tool',
+  component: DevToolExample
+});
+```
+
+`DevToolExample.vue` is a documentation sample showing the expected tool shape;
+it is **not** registered automatically. Tools (and any data they read or write)
+are owned entirely by the consumer that registers them — this library only
+provides the panel and the open/close mechanism. Use `unregisterDevTool(id)` to
+remove a tool.
+
+### Production bundles
+
+The overlay is loaded as a separate chunk (`bedrock-vue-devmode`) only when the
+flag is set, so production users never fetch or execute it. The chunk is still
+present in the build output. Apps that want zero dev-mode bytes in production
+can strip it at build time with the [webpack][] [DefinePlugin][] (or equivalent
+dead-code elimination); that is an app-level build decision and is not handled
+here.
+
 ## License
 
 [Apache License, Version 2.0](LICENSE) Copyright 2011-2024 Digital Bazaar, Inc.
