@@ -236,34 +236,36 @@ trigger.install();
 The corner hit-zone is small and invisible, so normal taps are unaffected; only
 a deliberate repeated tap in the corner triggers it.
 
-### Logging values (`devLog`)
+### Viewing logs (`console.*` mirror)
 
-The most common use is logging values to the overlay — the dev-mode equivalent
-of `console.log`. `devLog()` is callable from anywhere and requires no setup:
-when dev mode is on, the shell auto-registers a built-in **Log** tool that
-displays the entries.
+There is **no separate logging API**. When dev mode is on, the shell mirrors the
+standard `console` methods into a built-in **Log** tool: every `console.log`,
+`console.info`, `console.debug`, `console.warn`, and `console.error` call —
+*anywhere* in the stack, including library and third-party code — is shown in
+the overlay. Calls are still forwarded to the real console unchanged, so the
+overlay is a *mirror*, not a replacement.
 
 ```js
-import {devLog} from '@bedrock/vue';
-
-devLog('did loaded');                         // info, plain text
-devLog.info('server returns 200');
-devLog.warn('exchange retried', {label: 'scanner'});
-devLog.error(new Error('exchange timeout'));  // message + stack
-devLog(vcObject, {label: 'issued VC'});       // collapsible JSON
+// no import or setup needed — just log as usual
+console.log('did loaded');
+console.log('issued VC', vcObject);          // text + collapsible JSON
+console.warn('scanner: exchange retried');
+console.error(new Error('exchange timeout')); // message + stack
 ```
 
-The Log tool renders each entry **by type**: strings and primitives as text,
+The Log tool renders each argument **by type**: strings and primitives as text,
 objects and arrays as collapsible pretty-printed JSON (with a copy button),
 `Error`s as message + stack, and `null`/`undefined` as a dimmed literal. Any
-`http(s)` URLs inside text entries are rendered as clickable links with their
-own copy button. Entries carry an optional `label` and a severity
-(`info`/`warn`/`error`) that drives an icon and color. The buffer keeps the most
-recent 50 entries; `clearDevLog()` empties it and `getDevLogEntries()` returns
-the reactive list.
+`http(s)` URLs in text are rendered as clickable links with their own copy
+button. Each entry shows a timestamp and a severity icon/color derived from the
+console method (`warn`/`error`, else info). The buffer keeps the most recent 50
+entries; `clearDevLog()` empties it and `getDevLogEntries()` returns the
+reactive list.
 
-When dev mode is off, `devLog()` is a cheap no-op path (the buffer is never
-shown and the Log tool is never loaded).
+Mirroring is installed automatically when dev mode is on (and never otherwise).
+Other console methods (`console.group`, `console.table`, `console.trace`, …) are
+left untouched and behave normally in the real console. Hosts that need manual
+control can call `installConsoleMirror()` / `uninstallConsoleMirror()`.
 
 ### Registering a tool
 

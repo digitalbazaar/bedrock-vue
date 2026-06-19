@@ -12,11 +12,14 @@
   key trigger. Off by default with no production behavior change. The panel is
   responsive: a right-hand rail on tablet/desktop and a bottom sheet on phone
   widths.
-- Add `devLog()` (with `devLog.info`/`warn`/`error`), a `console.log`-style API
-  for logging values to the dev-mode overlay. When dev mode is on, a built-in
-  "Log" tool is auto-registered that renders entries by type (text, collapsible
-  JSON, error + stack, dimmed null/undefined) and turns URLs in text into
-  clickable links. `getDevLogEntries()` and `clearDevLog()` are also exported.
+- Mirror `console.*` into the dev-mode overlay. When dev mode is on, the common
+  console methods (`log`/`info`/`debug`/`warn`/`error`) are mirrored into a
+  built-in "Log" tool, so existing `console.*` calls anywhere in the stack are
+  shown with no code changes (calls are still forwarded to the real console).
+  Entries render by type (text, collapsible JSON, error + stack, dimmed
+  null/undefined) and turn URLs in text into clickable links.
+  `installConsoleMirror()`, `uninstallConsoleMirror()`, `getDevLogEntries()`,
+  and `clearDevLog()` are exported.
 - Add `createTapTrigger()`, an opt-in corner-tap trigger for opening the
   dev-mode overlay on touch devices (where the key trigger is unusable). Tapping
   a configurable screen corner a number of times in quick succession fires the
