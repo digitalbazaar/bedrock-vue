@@ -4,6 +4,13 @@
 - **Date:** 2026-06-dd
 - **Repo:** bedrock-vue (public / treated as `green`)
 
+> **Note — superseded in places by the implementation.** This is the original
+> wallet-era design. Some details below were changed when the generic shell was
+> built in `@bedrock/vue`: the flag is `bedrock.devMode` (not `wallet.devMode`),
+> the overlay is plain Vue (not Quasar `q-dialog`/drawer) auto-mounted in
+> `bootstrap()` (not `WalletLayout.vue`), and triggers are opt-in helpers the
+> host wires. See the README's "Developer Mode" section for the shipped API.
+
 > **Scope note.** This spec covers the **generic dev-mode shell** that lives in
 > `@bedrock/vue` (the flag gate, overlay panel, and `registerDevTool()` API).
 > The wallet-specific tools (paste-exchange-URL, seed-credentials) are
