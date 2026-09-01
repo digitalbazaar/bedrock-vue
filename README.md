@@ -125,6 +125,10 @@ need to be defined by the developer as well.
 
 ### Import and create your router
 
+Both `vue-router@4` and `vue-router@5` are supported; a host app may use
+either. This library calls only `addRoute`, `currentRoute` and `beforeEach`,
+which are unchanged between the two majors.
+
 Vue 3.x uses a new router. This router needs to be created via an imported
 function now, instead of installing a Vue plugin and then using a constructor.
 

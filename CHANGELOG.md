@@ -1,5 +1,15 @@
 # bedrock-vue ChangeLog
 
+## 5.2.1 - 2026-xx-xx
+
+### Fixed
+- Restore `vue-router@4` support in the peer dependency range. 5.2.0 replaced
+  `^4.0.15` with `^5.1.0`, leaving the release unresolvable for consumers still
+  on v4. The range is now `^4.0.15 || ^5.0.0`. Both majors work: this library
+  imports nothing from `vue-router` and calls only `addRoute`, `currentRoute`
+  and `beforeEach` on the router the host app supplies, none of which changed
+  in v5.
+
 ## 5.2.0 - 2026-06-15
 
 ### Changed
