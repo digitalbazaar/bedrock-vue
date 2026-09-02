@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 5.2.1 - 2026-xx-xx
+## 5.2.1 - 2026-09-02
 
 ### Fixed
 - Restore `vue-router@4` support in the peer dependency range. 5.2.0 replaced
