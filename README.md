@@ -181,6 +181,9 @@ initialize({
       history: createWebHistory(),
       routes: []
     });
+    // adds common functionality like "not found" route
+    // and page title setter
+    augmentRouter({app, router});
     app.use(router);
 
     return MyApp;
