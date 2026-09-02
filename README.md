@@ -170,6 +170,7 @@ setRootVue(async () => {
 Now:
 
 ```js
+import {augmentRouter} from '@bedrock/vue-router';
 import {initialize} from '@bedrock/vue';
 import {createRouter, createWebHistory} from 'vue-router';
 import MyApp from '../components/MyApp.vue';
