@@ -1,6 +1,6 @@
 # bedrock-vue ChangeLog
 
-## 6.0.0 - 2026-09-dd
+## 6.0.0 - 2026-09-02
 
 ### Removed
 - **BREAKING**: Remove `augmentRouter`; use `@bedrock/vue-router` instead.
