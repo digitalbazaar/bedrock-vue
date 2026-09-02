@@ -1,5 +1,11 @@
 # bedrock-vue ChangeLog
 
+## 6.0.0 - 2026-09-dd
+
+### Removed
+- **BREAKING**: Remove `augmentRouter`; use `@bedrock/vue-router` instead.
+- **BREAKING**: Remove the `vue-router` peer dependency.
+
 ## 5.2.1 - 2026-09-02
 
 ### Fixed

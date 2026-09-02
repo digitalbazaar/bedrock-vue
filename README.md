@@ -20,6 +20,28 @@ JSON truthy value. A [Bedrock][] command line option can also be used:
 node app.js --webpack-define VUE_PERFORMANCE=true
 ```
 
+## Migration from 5.x to 6.x
+
+`augmentRouter` moved to [@bedrock/vue-router][], which now owns the
+`vue-router` peer dependency. This package no longer imports or references
+`vue-router`, so a host app's `vue-router` major version is independent of this
+package's.
+
+Previously:
+
+```js
+import {augmentRouter} from '@bedrock/vue';
+```
+
+Now:
+
+```js
+import {augmentRouter} from '@bedrock/vue-router';
+```
+
+The function itself is unchanged; add `@bedrock/vue-router` to the app's
+dependencies and update the import.
+
 ## Migration from Vue 2.x to 3.x
 
 Some of the important architectural changes that are new in Vue 3.x include
@@ -125,10 +147,6 @@ need to be defined by the developer as well.
 
 ### Import and create your router
 
-Both `vue-router@4` and `vue-router@5` are supported; a host app may use
-either. This library calls only `addRoute`, `currentRoute` and `beforeEach`,
-which are unchanged between the two majors.
-
 Vue 3.x uses a new router. This router needs to be created via an imported
 function now, instead of installing a Vue plugin and then using a constructor.
 
@@ -152,7 +170,7 @@ setRootVue(async () => {
 Now:
 
 ```js
-import {initialize, augmentRouter} from '@bedrock/vue';
+import {initialize} from '@bedrock/vue';
 import {createRouter, createWebHistory} from 'vue-router';
 import MyApp from '../components/MyApp.vue';
 
@@ -162,15 +180,16 @@ initialize({
       history: createWebHistory(),
       routes: []
     });
-    // adds common functionality like "not found" route
-    // and page title setter
-    augmentRouter({app, router});
     app.use(router);
 
     return MyApp;
   }
 })
 ```
+
+This library does not depend on `vue-router` and does not configure the
+router. For the common "not found" route and page title handling that earlier
+versions provided via `augmentRouter`, see [@bedrock/vue-router][].
 
 ## License
 
@@ -185,6 +204,7 @@ for details.
 Commercial licensing and support are available by contacting
 [Digital Bazaar](https://digitalbazaar.com/) <support@digitalbazaar.com>.
 
+[@bedrock/vue-router]: https://github.com/digitalbazaar/bedrock-vue-router
 [Bedrock]: https://github.com/digitalbazaar/bedrock
 [DefinePlugin]: https://webpack.js.org/plugins/define-plugin/
 [Vue Global Config]: https://vuejs.org/v2/api/#Global-Config
