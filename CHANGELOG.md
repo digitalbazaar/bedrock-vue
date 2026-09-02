@@ -8,7 +8,9 @@
   on v4. The range is now `^4.0.15 || ^5.0.0`. Both majors work: this library
   imports nothing from `vue-router` and calls only `addRoute`, `currentRoute`
   and `beforeEach` on the router the host app supplies, none of which changed
-  in v5.
+  in v5. This is an unusual measure to support two different major versions
+  of a peer dependency; upgrading to version 6 is strongly recommended, it
+  will only support a single major version of peer dependencies.
 
 ## 5.2.0 - 2026-06-15
 
